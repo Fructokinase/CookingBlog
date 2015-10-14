@@ -5,14 +5,15 @@
   padding: 0.2em 0;
 }
 
-html, body {
-   background: url("/images/main/fushimi_inari.jpg") no-repeat
-   center center fixed;
-   background-size: cover;
+
+html {
+  [data-sr] {visibility: hidden;}
 }
 
 body {
   padding: 0;
+  position: relative;
+
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -29,6 +30,30 @@ body {
   margin-bottom: 10px;
   background-color: transparent;
   background: transparent;
+}
+
+.navbar-brand {
+  font-family: 'Qwigley', cursive;
+  font-size: 50px;
+}
+
+.navbar-nav {
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+}
+
+
+.navbar.scrolled {
+    background: rgb(68, 68, 68);
+    background: rgba(0, 0, 0, 0.78);
+}
+
+.navbar-collapse.collapsing,   
+.navbar-collapse.in {
+
+    position: absolute; 
+    background-color: // whatever for transparent
+
 }
 
 .navbar-default {
@@ -95,4 +120,9 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.blog {
+  background-size: 300px 200px;
+  background-color: yellow;
 }
