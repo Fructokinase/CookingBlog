@@ -14,4 +14,5 @@ angular.module('angularGeneratorYoApp')
       'AngularJS',
       'Karma'
     ];
+
   });

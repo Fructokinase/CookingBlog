@@ -1,1 +1,22 @@
-<p>This is the blog view.</p>
+<div class = "blog" ng-controller="BlogCtrl">
+	<div class = "jumbotron">
+		<div class = "container">
+			<div class = "row">
+				<div class = "col-md-12" ng-repeat="blogContent in blogContents">
+					<div class = "col-md-12">
+						<div class="pull-left">{{ blogContent.date}}</div>
+					</div>
+
+					<div class = "col-md-12">
+						<div class="pull-left">{{ blogContent.title }}</div><br>
+					</div>
+
+					<div class = "col-md-12">
+						<div class="pull-left">{{ blogContent.body}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

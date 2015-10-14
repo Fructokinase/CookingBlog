@@ -5,11 +5,6 @@
   padding: 0.2em 0;
 }
 
-
-html {
-  [data-sr] {visibility: hidden;}
-}
-
 body {
   padding: 0;
   position: relative;
@@ -40,20 +35,6 @@ body {
 .navbar-nav {
   font-family: 'Poiret One', cursive;
   font-size: 20px;
-}
-
-
-.navbar.scrolled {
-    background: rgb(68, 68, 68);
-    background: rgba(0, 0, 0, 0.78);
-}
-
-.navbar-collapse.collapsing,   
-.navbar-collapse.in {
-
-    position: absolute; 
-    background-color: // whatever for transparent
-
 }
 
 .navbar-default {
@@ -122,7 +103,3 @@ body {
   }
 }
 
-.blog {
-  background-size: 300px 200px;
-  background-color: yellow;
-}
