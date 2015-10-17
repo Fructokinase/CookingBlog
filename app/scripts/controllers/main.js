@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the angularGeneratorYoApp
  */
-angular.module('angularGeneratorYoApp')
+angular.module('cookingBlog')
   .controller('MainCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',

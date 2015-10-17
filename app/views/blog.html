@@ -1,22 +1,48 @@
 <div class = "blog" ng-controller="BlogCtrl">
-	<div class = "jumbotron">
 		<div class = "container">
 			<div class = "row">
 				<div class = "col-md-12" ng-repeat="blogContent in blogContents">
-					<div class = "col-md-12">
-						<div class="pull-left">{{ blogContent.date}}</div>
-					</div>
+					<div class = "jumbotron">
+						<div class = "row">
+							<div class = "col-md-12">
+								<div class="pull-left">{{ blogContent.date}}</div>
+							</div>
 
-					<div class = "col-md-12">
-						<div class="pull-left">{{ blogContent.title }}</div><br>
-					</div>
+							<div class = "col-md-12">
+								<div class="pull-left">{{ blogContent.title }}</div><br>
+							</div>
 
-					<div class = "col-md-12">
-						<div class="pull-left">{{ blogContent.body}}</div>
+							<div class = "col-md-12">
+								<div class="pull-left">{{ blogContent.body}}</div>
+							</div>
+
+							<!-- comment section of the blog-->
+							<button ng-click = "showComments = !showComments">show comments</button>
+
+							<div class = "comments" ng-show="showComments">
+								<div class ="col-md-12">
+									<div class = "col-xs-1">
+										<form>
+											<input ng-model="nameInput"> Name</input>
+											<textarea ng-model="commentInput" placeholder="comment here"> Comment</textarea>
+											<button ng-click="addComment(blogContent.id, nameInput, commentInput)">Comment</button>
+									    </form>
+									</div>
+
+									<div ng-repeat = "comment in comments[blogContent.id]|orderBy:'-id'">
+										<div class = "row">
+											<div class = "col-xs-1">
+												<div class = "col-xs-1" = >{{ comment.name }}</div>
+												<div class = "col-xs-1">{{ comment.comment }}</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
 </div>
