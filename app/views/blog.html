@@ -5,15 +5,15 @@
 					<div class = "jumbotron">
 						<div class = "row">
 							<div class = "col-md-12">
-								<div class="pull-left">{{ blogContent.date}}</div>
+								<div class="pull-left"><p align="left">{{ blogContent.date}}</p></div>
 							</div>
 
 							<div class = "col-md-12">
-								<div class="pull-left">{{ blogContent.title }}</div><br>
+								<div class="pull-left"><p align="left">{{ blogContent.title }}</P></div><br>
 							</div>
 
 							<div class = "col-md-12">
-								<div class="pull-left">{{ blogContent.body}}</div>
+								<div class="pull-left"><p align="left">{{ blogContent.body}}</p></div>
 							</div>
 
 							<!-- comment section of the blog-->
@@ -26,14 +26,14 @@
 											<div class = "col-md-12">
 												<div class = "form-group">
 													<label for="nameInput">Name: </label>
-													<input ng-model="nameInput" id - "nameInput">
+													<input class = "form-control" ng-model="nameInput" id - "nameInput">
 												</input>
 											</div>
 											</div>
 											<div class = "col-md-12">
 												<div class = "form-group">
 													<label for="commentInput">Comment</label>
-													<textarea ng-model="commentInput" id="commentInput" placeholder="comment here"> Comment</textarea>
+													<textarea rows="3" class="form-control" ng-model="commentInput" id="commentInput" placeholder="comment here"> Comment</textarea>
 												</div>
 											</div>
 											<button class="btn" ng-click="addComment(blogContent.id, nameInput, commentInput)">
@@ -45,14 +45,13 @@
 									<div ng-repeat = "comment in comments[blogContent.id]|orderBy:'-id'">
 										<div class = "row">
 											<div class = "col-xs-12">
-												<div class = "col-xs-12" = >{{ comment.name }}</div>
-												<div class = "col-xs-12">{{ comment.comment }}</div>
+												<div class = "col-xs-12"><p>{{ comment.name }}</p></div>
+												<div class = "col-xs-12"><p>{{ comment.comment }}</p></div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-
 						</div>
 					</div>
 				</div>
