@@ -17,19 +17,28 @@
 							</div>
 
 							<!-- comment section of the blog-->
-							<button ng-click = "showComments = !showComments">show comments</button>
+							<button class = "btn" ng-click = "showComments = !showComments">show comments</button>
 
 							<div class = "comments" ng-show="showComments">
 								<div class ="col-md-12">
 									<div class = "commentForm">
-										<form>
+										<form role = "form">
 											<div class = "col-md-12">
-												<input ng-model="nameInput"></input>
+												<div class = "form-group">
+													<label for="nameInput">Name: </label>
+													<input ng-model="nameInput" id - "nameInput">
+												</input>
+											</div>
 											</div>
 											<div class = "col-md-12">
-												<textarea ng-model="commentInput" placeholder="comment here"> Comment</textarea>
+												<div class = "form-group">
+													<label for="commentInput">Comment</label>
+													<textarea ng-model="commentInput" id="commentInput" placeholder="comment here"> Comment</textarea>
+												</div>
 											</div>
-											<button ng-click="addComment(blogContent.id, nameInput, commentInput)">Comment</button>
+											<button class="btn" ng-click="addComment(blogContent.id, nameInput, commentInput)">
+												<span class="glyphicon glyphicon-comment"></span> Comment
+											</button>
 									    </form>
 									</div>
 
