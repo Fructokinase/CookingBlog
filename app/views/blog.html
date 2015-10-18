@@ -21,19 +21,23 @@
 
 							<div class = "comments" ng-show="showComments">
 								<div class ="col-md-12">
-									<div class = "col-xs-1">
+									<div class = "commentForm">
 										<form>
-											<input ng-model="nameInput"> Name</input>
-											<textarea ng-model="commentInput" placeholder="comment here"> Comment</textarea>
+											<div class = "col-md-12">
+												<input ng-model="nameInput"></input>
+											</div>
+											<div class = "col-md-12">
+												<textarea ng-model="commentInput" placeholder="comment here"> Comment</textarea>
+											</div>
 											<button ng-click="addComment(blogContent.id, nameInput, commentInput)">Comment</button>
 									    </form>
 									</div>
 
 									<div ng-repeat = "comment in comments[blogContent.id]|orderBy:'-id'">
 										<div class = "row">
-											<div class = "col-xs-1">
-												<div class = "col-xs-1" = >{{ comment.name }}</div>
-												<div class = "col-xs-1">{{ comment.comment }}</div>
+											<div class = "col-xs-12">
+												<div class = "col-xs-12" = >{{ comment.name }}</div>
+												<div class = "col-xs-12">{{ comment.comment }}</div>
 											</div>
 										</div>
 									</div>
