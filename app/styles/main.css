@@ -5,10 +5,15 @@
   padding: 0.2em 0;
 }
 
-body {
+html, body {
   padding: 0;
   position: relative;
+  height: 100%;
+}
 
+.wrapper{
+  min-height: 100%;
+  position: relative;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -48,14 +53,6 @@ body {
   margin-bottom: 0;
   line-height: 40px;
   padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-  text-align: center;
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {

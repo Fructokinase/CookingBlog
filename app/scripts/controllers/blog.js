@@ -10,6 +10,8 @@
 angular.module('cookingBlog')
   .controller('BlogCtrl', function ($scope) {
 
+    $scope.currentBlogId;
+
     //comments needs id, name, like,
 
     $scope.comments = [];
@@ -17,22 +19,21 @@ angular.module('cookingBlog')
     $scope.comments[2] = [{id:1,name: "Alex", comment: "That" }, {id:3,name: "Alex", comment: "awesome!!"}];
     $scope.comments[3] = [{id:2,name: "Alex", comment: "look"}, {id:3,name: "Alex", comment: "awesome!!!"}];
 
+    var placeholderDate = moment().format("YYYY-MM-DD");
+
     $scope.blogContents  = [
-    {id: 1, title: "some title 1", body: " testing some body 1"+ 
+    {id: 1, date: placeholderDate, title: "some title 1", body: " testing some body 1"+ 
     "testing some body 1 ar far away, behind the word mountains, far from. testing some body 1"+
     "Pointing has no control about the blind texts it is an almost unorthographic tent 1"+
-    " Pityful a rethoric question ran over her cheek, then 1",
-    date: "2015-10-15"},
-    {id: 2, title: "some title 2", body: " testing some body 2" +
+    " Pityful a rethoric question ran over her cheek, then 1"},
+    {id: 2, date: placeholderDate, title: "some title 2", body: " testing some body 2" +
     "testing some body 2 testing some body 2 testing some body 2 testing some body 2"+
     "testing some body 2 testing some body 2 testing some body 2 testing some body 2"+
-    "testing some body 2 testing some body 2 testing some body 2 testing some body 2",
-    date: "2015-10-14"},
-    {id: 3, title: "some title 3", body: " testing some body 3" + 
+    "testing some body 2 testing some body 2 testing some body 2 testing some body 2"},
+    {id: 3, date: placeholderDate, title: "some title 3", body: " testing some body 3" + 
     "testing some body 3 testing some body 3 testing some body 3 testing some body 3"+
     "testing some body 3 testing some body 3 testing some body 3 testing some body 3"+
-    "testing some body 3 testing some body 3 testing some body 3 testing some body 3",
-    date: "2015-10-13"}];
+    "testing some body 3 testing some body 3 testing some body 3 testing some body 3"}];
 
     $scope.addComment = function (blogContent_id, name, comment) {
         $scope.comments[blogContent_id].push({
@@ -40,7 +41,7 @@ angular.module('cookingBlog')
             name: name,
             comment:comment
         })
-    }
+    };
 
     $scope.showComments = false;
 

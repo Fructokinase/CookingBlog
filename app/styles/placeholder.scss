@@ -1,0 +1,30 @@
+@import "blog-contents";
+
+.blog-wrapper{
+  min-height: 100%;
+  position: relative;
+
+  .blog-header{
+
+  }
+
+  .blog-main{
+    background-color: yellow;
+    padding-bottom: 50px;
+    height: 90%;
+    position: absolute;
+    overflow: scroll;
+    width: 100%;
+  }
+
+  .blog-footer{
+    width: 100%;
+    text-align: center;
+    padding-top: 19px;
+    color: #777;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+  }
+
+}
