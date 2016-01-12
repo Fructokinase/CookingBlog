@@ -1,12 +1,13 @@
 <div class = "blog-contents" ng-controller="BlogCtrl">
     <div ng-repeat="blogContent in blogContents">
         <div class="blog-content">
-            <div class="blog-date">
-                {{blogContent.date}}
-            </div>
 
             <div class="blog-title">
                 {{blogContent.title}}
+            </div>
+
+            <div class="blog-date">
+                {{blogContent.date}}
             </div>
 
             <div class="blog-body">
@@ -15,4 +16,3 @@
         </div>
     </div>
 </div>
-

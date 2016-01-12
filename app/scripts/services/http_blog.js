@@ -20,28 +20,13 @@ angular.module('cookingBlog')
             params: {
                 key: "",
                 limit: blogListParams.limit,
-                offset: blogLIstParams.offset
+                offset: blogListParams.offset
             }
         })
         .then(function (data) {
-            return data.blogs;
+            return data.result;
         })
     }
-
-    http_blog.getBlogByDate = function(date) {
-        $http({
-            method: "GET",
-            url: "to be set",
-            params: {
-                key: "",
-                date: date
-            }
-        })
-        .then(function (data) {
-            return data.blogDetail
-        })
-    }
-
 
     return http_blog;
   }]);

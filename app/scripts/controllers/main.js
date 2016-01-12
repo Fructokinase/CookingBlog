@@ -8,11 +8,16 @@
  * Controller of the angularGeneratorYoApp
  */
 angular.module('cookingBlog')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', ["$scope", "$location", "$anchorScroll", function ($scope, $location, $anchorScroll) {
 
-  });
+    $scope.toAbout = function () {
+        $location.hash("About");
+        $anchorScroll();
+    }
+
+    $scope.toTop = function () {
+        $location.hash("Top");
+        $anchorScroll();
+    }
+
+  }]);

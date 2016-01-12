@@ -1,3 +1,31 @@
+// $blog-content-height: 500px;
+$interblog-space: 40px;
+$title-font-size: 32px;
+$blog-body-color: #666;
+
+// .blog-content{
+//     height: $blog-content-height;
+// }
+
 .blog-content{
-    height: 500px;
+    padding-bottom: $interblog-space;
+
+    .blog-title{
+        text-align: center;
+        font-family: Handlee;
+        font-size: $title-font-size;
+    }
+
+    .blog-date{
+        text-align: center;
+        font-family: 'Poiret One';
+    }
+
+    .blog-body{
+        font-family: 'open sans';
+        font-size: 13pt;
+        color: $blog-body-color;
+        line-height: 30px;
+    }
 }
+

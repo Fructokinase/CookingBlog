@@ -8,16 +8,7 @@
  * Controller of the angularGeneratorYoApp
  */
 angular.module('cookingBlog')
-  .controller('BlogCtrl', function ($scope) {
-
-    $scope.currentBlogId;
-
-    //comments needs id, name, like,
-
-    $scope.comments = [];
-    $scope.comments[1] = [{id:1,name: "Alex", comment: "This" }, {id:2,name: "Alex", comment: "looks"}, {id:3,name: "Alex", comment: "awesome!"}];
-    $scope.comments[2] = [{id:1,name: "Alex", comment: "That" }, {id:3,name: "Alex", comment: "awesome!!"}];
-    $scope.comments[3] = [{id:2,name: "Alex", comment: "look"}, {id:3,name: "Alex", comment: "awesome!!!"}];
+  .controller('BlogCtrl', ["$scope", "http_blog", function ($scope, http_blog) {
 
     var placeholderDate = moment().format("YYYY-MM-DD");
 
@@ -35,14 +26,13 @@ angular.module('cookingBlog')
     "testing some body 3 testing some body 3 testing some body 3 testing some body 3"+
     "testing some body 3 testing some body 3 testing some body 3 testing some body 3"}];
 
-    $scope.addComment = function (blogContent_id, name, comment) {
-        $scope.comments[blogContent_id].push({
-            id: $scope.comments[blogContent_id].length + 1,
-            name: name,
-            comment:comment
-        })
+    var bloglist_params = {
+        limit: 100,
+        offset: 0
     };
 
-    $scope.showComments = false;
+    http_blog.getBlogList(bloglist_params).then(function(data){
+        $scope.blogContents = data.result;
+    });
 
-  });
+  }]);
