@@ -32,6 +32,8 @@ angular.module('cookingBlog')
     };
 
     http_blog.getBlogList(bloglist_params).then(function(data){
+        console.log("controller")
+        console.log(data)
         $scope.blogContents = data.result;
     });
 
