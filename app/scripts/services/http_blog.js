@@ -14,18 +14,18 @@ angular.module('cookingBlog')
     var http_blog = {};
 
     http_blog.getBlogList = function (blogListParams) {
-        $http({
+        return $http({
             method: "GET",
             url: $rootScope.baseUrl + "getBlogList",
             params: {
                 key: "",
                 limit: blogListParams.limit,
-                offset: blogListParams.offset
+                offset: blogListParams.offset,
+                show_on_blog: true
             }
         })
-        .then(function (data) {
-            console.log(data);
-            return data.result;
+        .then(function (result) {
+            return result.data;
         })
     }
 
