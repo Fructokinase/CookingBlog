@@ -8,23 +8,24 @@
  * Service in the angularGeneratorYoApp.
  */
 angular.module('cookingBlog')
-  .service('http_blog', ["$http", function ($http) {
+  .service('http_blog', ["$http", "$rootScope", function ($http, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     var http_blog = {};
 
     http_blog.getBlogList = function (blogListParams) {
-        $http({
+        return $http({
             method: "GET",
-            url: "to be set",
+            url: $rootScope.baseUrl + "getBlogList",
             params: {
                 key: "",
                 limit: blogListParams.limit,
-                offset: blogListParams.offset
+                offset: blogListParams.offset,
+                show_on_blog: true
             }
         })
-        .then(function (data) {
-            return data.result;
+        .then(function (result) {
+            return result.data;
         })
     }
 

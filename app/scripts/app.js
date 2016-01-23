@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('cookingBlog', [
     'ngAnimate',
     'ngCookies',
@@ -28,3 +28,7 @@ angular
         redirectTo: '/'
       });
   });
+
+  app.run(["$rootScope", function($rootScope){
+    $rootScope.baseUrl = "http://trailandcook.mybluemix.net/"
+  }]);
