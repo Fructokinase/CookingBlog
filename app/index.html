@@ -51,16 +51,8 @@
         </div>
       </div>
 
-      <div class="blog-main">
-        <div ng-view="" id="Top"></div>
-
-        <div class="blog-about" id="About">
-          <h4>About me</h4>
-          <p>Can't think of a good introduction for now, gotta make it sound cool and stuff ..</p>
-          <p>For now this is just a place where I will blab about random cooking things I counter day to day</p>
-          <p>By the way I go to Waterloo so if you see me on campus or something, say hi!</p>
-          <p> Alex </p>
-        </div>
+      <div class="blog-main" ui-view>
+        <div id="Top"></div>
 
         <!--  <div class="blog-footer">
           <p><span class="glyphicon glyphicon-glass"></span> Alex Chen 2015</p>
@@ -94,6 +86,10 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/tinymce/tinymce.js"></script>
+    <script src="bower_components/tinymce-dist/tinymce.js"></script>
+    <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <!-- endbower -->
 
     
@@ -101,10 +97,13 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/admin.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/blog.js"></script>
         <script src="scripts/services/http_blog.js"></script>
+        <script src="scripts/services/http_admin.js"></script>
+        <script src="scripts/services/time.js"></script>
         <!-- endbuild -->
 </body>
 </html>

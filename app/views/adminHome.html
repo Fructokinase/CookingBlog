@@ -1,0 +1,46 @@
+<div class="blog-admin">
+    <form method="post" ng-submit="post(blog_params)">
+            <div class="row admin-row">
+                <div class="col-md-3">
+                    <label>Title</label>
+                </div>
+                <div class="col-md-9">
+                    <input ng-model="blog_params.title">
+                </div>
+            </div>
+
+            <div class="row admin-row">
+                <div class="col-md-3">
+                    <label>Author</label>
+                </div>
+                <div class="col-md-9">
+                    <input ng-model="blog_params.author">
+                </div>
+            </div>
+
+            <div class="row admin-row">
+                <div class="col-md-3">
+                    <label>Content</label>
+                </div>
+                <div class="col-md-9">  
+                    <textarea></textarea>
+                </div>
+            </div>
+
+            <div class="row admin-row">
+                <div class="col-md-3">
+                    <label>show on blog</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="checkbox" ng-model="blog_params.show_on_blog" ng-true-value="true" ng-false-value="false">
+                </div>
+            </div>
+
+            <div class="row admin-row">
+                <label>post</label>
+                <input class="button" type="submit" id="submit" value="Submit"/>
+            </div>
+
+    </form>
+</div>
+

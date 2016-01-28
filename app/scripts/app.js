@@ -15,19 +15,29 @@ var app = angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router',
+    'ui.tinymce'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/blog.html',
-        controller: 'BlogCtrl',
-        controllerAs: 'blog'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+  .config(['$stateProvider', '$urlRouterProvider', "$httpProvider",
+    function ($stateProvider, $urlRouterProvider, $httpProvider) {
+     delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+    $stateProvider
+    .state('blog', {
+      url: '/',
+      templateUrl: "views/blog.html",
+      controller: "BlogCtrl"
+    })
+    .state('admin', {
+      url: '/admin',
+      templateUrl: "views/adminHome.html",
+      controller: "AdminCtrl as admin",
+    })
+
+    $urlRouterProvider.otherwise('/');
+
+  }]);
 
   app.run(["$rootScope", function($rootScope){
     $rootScope.baseUrl = "http://trailandcook.mybluemix.net/"
