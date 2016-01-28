@@ -10,27 +10,36 @@
   .blog-content .blog-body {
     font-family: 'open sans';
     font-size: 13pt;
-    color: #666;
-    line-height: 30px; }
+    color: #669999;
+    line-height: 20px; }
 
 .blog-contents {
   margin-left: 25%;
-  margin-right: 25%; }
+  margin-right: 25%;
+  padding-bottom: 10px;
+  padding-top: 10px; }
 
 .blog-about {
   background-color: #999966;
   padding-left: 25%;
   padding-right: 25%;
-  position: absolute;
-  bottom: 0;
-  width: 100%; }
+  width: 100%;
+  height: 250px; }
   .blog-about h4 {
     font-family: "Qwigley";
-    font-size: 20pt; }
+    font-size: 20pt;
+    padding-top: 20px; }
   .blog-about p {
     font-family: 'Open Sans';
     font-size: 13pt;
     color: #f5f5f0; }
+
+.blog-admin {
+  margin-left: 10%;
+  margin-right: 10%; }
+  .blog-admin .admin-row {
+    padding-top: 20px;
+    padding-bottom: 20px; }
 
 /* latin-ext */
 @font-face {
