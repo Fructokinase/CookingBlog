@@ -15,6 +15,17 @@ $content-margin: 10;
       margin-right: 25%;
       margin-bottom: 0px;
     }
+    .navbar{
+      .nav{
+        ul{
+          li{
+            a{
+              color: red;
+            }
+          }
+        }
+      }
+    }
   }
 
   .blog-main{

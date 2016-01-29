@@ -90,6 +90,8 @@
     margin-left: 25%;
     margin-right: 25%;
     margin-bottom: 0px; }
+  .blog-wrapper .blog-header .navbar .nav ul li a {
+    color: red; }
   .blog-wrapper .blog-main {
     padding-top: 50px;
     height: 100%;
