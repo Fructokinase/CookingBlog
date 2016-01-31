@@ -15,6 +15,29 @@ $content-margin: 10;
       margin-right: 25%;
       margin-bottom: 0px;
     }
+
+    .navbar-fixed-top.scrollednavbar{
+      margin-left: 0%;
+      margin-right: 0%;
+      background-color: #c0ff80;
+      border-top: 4px solid #b3ff66;
+      border-bottom: 4px solid #b3ff66;
+      .navbar-brand{
+        margin-left: 25%;
+        position: absolute;
+        color: white;
+      }
+      .navbar-nav{
+        margin-left: 60%;
+        li{
+          a{
+            color: white;
+          }
+        }
+      }
+    }
+
+
     .navbar-default{
       .navbar-nav{
         li{
@@ -36,7 +59,7 @@ $content-margin: 10;
             visibility: hidden;
             -webkit-transform: scaleX(0);
             transform: scaleX(0);
-            -webkit-transition: all 0.3s ease-in-out 0s;
+            -webkit-transition: all 0.2s ease-in-out 0s;
             transition: all 0.3s ease-in-out 0s;
           }
           a:hover:before {

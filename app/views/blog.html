@@ -1,5 +1,5 @@
 <div class = "blog-contents" ng-controller="BlogCtrl">
-    <div ng-repeat="blogContent in blogContents">
+    <div ng-repeat="blogContent in blogContents | orderBy: '-unixDate'">
         <div class="blog-content">
 
             <div class="blog-title">

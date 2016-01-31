@@ -90,6 +90,20 @@
     margin-left: 25%;
     margin-right: 25%;
     margin-bottom: 0px; }
+  .blog-wrapper .blog-header .navbar-fixed-top.scrollednavbar {
+    margin-left: 0%;
+    margin-right: 0%;
+    background-color: #c0ff80;
+    border-top: 4px solid #b3ff66;
+    border-bottom: 4px solid #b3ff66; }
+    .blog-wrapper .blog-header .navbar-fixed-top.scrollednavbar .navbar-brand {
+      margin-left: 25%;
+      position: absolute;
+      color: white; }
+    .blog-wrapper .blog-header .navbar-fixed-top.scrollednavbar .navbar-nav {
+      margin-left: 60%; }
+      .blog-wrapper .blog-header .navbar-fixed-top.scrollednavbar .navbar-nav li a {
+        color: white; }
   .blog-wrapper .blog-header .navbar-default .navbar-nav li a {
     position: relative;
     text-decoration: none; }
@@ -106,7 +120,7 @@
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.2s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s; }
   .blog-wrapper .blog-header .navbar-default .navbar-nav li a:hover:before {
     visibility: visible;

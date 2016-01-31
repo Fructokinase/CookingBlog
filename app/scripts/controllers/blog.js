@@ -12,8 +12,6 @@ angular.module('cookingBlog')
 
     $scope.blogContents = [];
 
-    var placeholderDate = moment().format("YYYY-MM-DD");
-
     var bloglist_params = {
         limit: 100,
         offset: 0
@@ -22,6 +20,7 @@ angular.module('cookingBlog')
     http_blog.getBlogList(bloglist_params).then(function (data) {
         $scope.blogContents = data.result;
         $scope.blogContents.map(function (blogContent){
+            blogContent.unixDate = blogContent.created_on;
             blogContent.created_on = time.unixToYYYYMMDD(blogContent.created_on);
         });
     })
