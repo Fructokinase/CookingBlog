@@ -8,7 +8,7 @@
 html, body {
   padding: 0;
   position: relative;
-  height: 1000px;
+  height: 100%;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
