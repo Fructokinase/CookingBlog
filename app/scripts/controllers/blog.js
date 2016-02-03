@@ -8,7 +8,7 @@
  * Controller of the angularGeneratorYoApp
  */
 angular.module('cookingBlog')
-  .controller('BlogCtrl', ["$scope", "http_blog", "time", function ($scope, http_blog, time) {
+  .controller('BlogCtrl', ["$scope", "http_blog", "time", "$timeout", function ($scope, http_blog, time, $timeout) {
 
     $scope.blogContents = [];
 
@@ -24,9 +24,4 @@ angular.module('cookingBlog')
             blogContent.created_on = time.unixToYYYYMMDD(blogContent.created_on);
         });
     })
-
-    
-
-    
-
   }]);

@@ -17,24 +17,7 @@ $content-margin: 10;
     }
 
     .navbar-fixed-top.scrollednavbar{
-      margin-left: 0%;
-      margin-right: 0%;
-      background-color: #c0ff80;
-      border-top: 4px solid #b3ff66;
-      border-bottom: 4px solid #b3ff66;
-      .navbar-brand{
-        margin-left: 25%;
-        position: absolute;
-        color: white;
-      }
-      .navbar-nav{
-        margin-left: 60%;
-        li{
-          a{
-            color: white;
-          }
-        }
-      }
+      background-color: black;
     }
 
 
@@ -79,16 +62,6 @@ $content-margin: 10;
     position: absolute;
     overflow: scroll;
     width: 100%;
-  }
-
-  .blog-footer{
-    width: 100%;
-    text-align: center;
-    padding-top: 19px;
-    color: #777;
-    height: 50px;
-    bottom: 0px;
-    position: absolute;
   }
 
 }

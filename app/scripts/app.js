@@ -40,5 +40,6 @@ var app = angular
   }]);
 
   app.run(["$rootScope", function($rootScope){
-    $rootScope.baseUrl = "http://trailandcook.mybluemix.net/"
+    $rootScope.baseUrl = "http://trailandcook.mybluemix.net/";
+    new WOW().init();
   }]);
