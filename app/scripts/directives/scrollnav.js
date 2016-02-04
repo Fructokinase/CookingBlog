@@ -7,28 +7,22 @@
  * # scrollnav
  */
 angular.module('cookingBlog')
-  .directive('scrollnav', ["$window", function ($window) {
+  .directive('scrollnav', ["$window", "$document", function ($window, $document) {
+
+    var $win = (angular.element($window))[0]
 
     return {
         restrict: 'A',
         link: function (scope, element, attrs)
         {
             var scrollElement = angular.element(element)
-            console.log(scrollElement[0])
-            scrollElement.bind('scroll', function(event){
-                console.log(angular.element(element))
-                // if ($win[0].pageYOffset >= 50) {
-                //     scope.boolChangeClass = true;
-                //     scope.navbarNavRight = false;
-                //     scope.fadeTest = true;
-                //     console.log("AOOOO")
-                // } else {
-                //     scope.boolChangeClass = false;
-                //     scope.navbarNavRight = true;
-                //     scope.fadeTest = false;
-                //     console.log("not scorlled")
-                // }
-                scope.$apply()
+            $document.bind('scroll', function(event){
+                if ($win.scrollY > ($win.screen.availHeight -60) ){
+                    scope.scrolledToBlog = true;
+                } else {
+                    scope.scrolledToBlog = false;
+                }
+                scope.$apply();
             })
         }
     };
