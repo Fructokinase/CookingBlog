@@ -27,21 +27,6 @@ html, body {
   background: transparent;
 }
 
-.navbar-brand {
-  font-family: 'Qwigley', cursive;
-  font-size: 50px;
-}
-
-.navbar-nav {
-  font-family: 'Poiret One', cursive;
-  font-size: 20px;
-}
-
-.navbar-default {
-  background-color: transparent;
-  background: transparent;
-  border-color: transparent;
-}
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;

@@ -13,8 +13,8 @@ angular.module('cookingBlog')
         link: function (scope, element, attrs)
         {
             var $win = angular.element($window);
-            scope.w_height = $win[0].screen.availHeight/2;
-            scope.w_width = $win[0].screen.availWidth/2;
+            scope.w_height = $win[0].screen.availHeight;
+            scope.w_width = $win[0].screen.availWidth;
         }
     };
   }]);
