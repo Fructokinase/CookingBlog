@@ -17,7 +17,8 @@ var app = angular
     'ngSanitize',
     'ngTouch',
     'ui.router',
-    'ui.tinymce'
+    'ui.tinymce',
+    'ui.bootstrap'
   ])
   .config(['$stateProvider', '$urlRouterProvider', "$httpProvider",
     function ($stateProvider, $urlRouterProvider, $httpProvider) {
