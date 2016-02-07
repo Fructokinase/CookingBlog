@@ -12,6 +12,12 @@
             <div class="blog-body" ng-bind-html="blogContent.body">
                 {{blogContent.body}}
             </div>
+
+            <uib-accordion>
+              <uib-accordion-group heading="comments" is-open="commentsOpen" ng-click="changeCommentStatus()">
+              what do you see?
+              </uib-accordion-group>
+            </uib-accordion>
           </div>
     </div>
 </div>
@@ -20,7 +26,7 @@
   <div class="row row-eq-height about-content">
     <div class="col-md-4 profile-pic-col">
       <img class="profile-pic" src="https://s3-us-west-2.amazonaws.com/trailandcook-images/profile.jpg">
-    </div>
+    </div
     <div class="col-md-8 about-text">
           <h4>About me</h4>
           <p> For now this is just a place where I will blab about random cooking things I counter day to day and a place where I will explore the philosophy of cooking, in the hopes of discovering new recipes and techniques</p>
