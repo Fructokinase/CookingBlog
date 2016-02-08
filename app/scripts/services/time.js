@@ -17,5 +17,9 @@ angular.module('cookingBlog')
         return moment(unixTime, "X").format("YYYY-MM-DD");
     };
 
+    time.unixToYYYYMMDDHHMM = function (unixTime) {
+        return moment(unixTime, "X").format("YYYY-MM-DD HH:mm")
+    }
+
     return time;
   }]);

@@ -14,8 +14,19 @@
             </div>
 
             <uib-accordion>
-              <uib-accordion-group heading="comments" is-open="commentsOpen" ng-click="changeCommentStatus()">
-              what do you see?
+              <uib-accordion-group heading="comments" is-open="commentsOpen" ng-click="changeCommentStatus(blogComment.id)">
+                <form role="form">
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="write a comment" rows="2"></textarea>
+                    </div>
+                  </form>
+                <div ng-repeat="comments in currentBlogComments" ng-show="currentBlogComments.length !== 0">
+                  <div>
+                  </div>
+                </div>
+                <div ng-show="currentBlogComments === 0">
+                  no comments to show
+                </div>
               </uib-accordion-group>
             </uib-accordion>
           </div>

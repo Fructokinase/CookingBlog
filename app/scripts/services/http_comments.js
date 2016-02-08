@@ -8,7 +8,7 @@
  * Service in the cookingBlog.
  */
 angular.module('cookingBlog')
-  .service('httpComments', ["$http", "$rootScope", function ($http, $rootScope) {
+  .service('http_comments', ["$http", "$rootScope", function ($http, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
 
     var http_comments = {};
@@ -24,6 +24,8 @@ angular.module('cookingBlog')
             }
         })
         .then(function (result) {
+            console.log("result")
+            console.log(result)
             return result.data;
         })
     };
