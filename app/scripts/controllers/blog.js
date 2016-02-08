@@ -8,7 +8,8 @@
  * Controller of the angularGeneratorYoApp
  */
 angular.module('cookingBlog')
-  .controller('BlogCtrl', ["$scope", "http_blog", "time", "$timeout", function ($scope, http_blog, time, $timeout) {
+  .controller('BlogCtrl', ["$scope", "http_blog", "time", "$timeout", "http_comments",
+    function ($scope, http_blog, time, $timeout, http_comments) {
 
     $scope.blogContents = [];
     $scope.commentsOpen = false;
@@ -23,10 +24,23 @@ angular.module('cookingBlog')
         $scope.blogContents.map(function (blogContent){
             blogContent.unixDate = blogContent.created_on;
             blogContent.created_on = time.unixToYYYYMMDD(blogContent.created_on);
+            blogContent.commentsOpen = false;
         });
     });
 
-    $scope.changeCommentStatus = function () {
-        $scope.commentsOpen = !$scope.commentsOpen;
-    }
+    $scope.changeCommentStatus = function (blog_id) {
+        http_comments.getComments({
+            blog_id: blog_id,
+            limit: 10,
+            offset: 0
+        })
+        .then(function(data){
+            $scope.currentBlogComments = data.result;
+            $scope.currentBlogComments.map(function (blogComment) {
+                blogComment.posted_on = time.unixToYYYYMMDDHHMM(blogComment.posted_on);
+            })
+            $scope.blogContents[blog_id].commentsOpen = !$scope.blogContents[blog_id].commentsOpen;
+        });
+    };
+
   }]);
