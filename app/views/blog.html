@@ -17,7 +17,10 @@
               <uib-accordion-group heading="comments" is-open="commentsOpen" ng-click="changeCommentStatus(blogComment.id)">
                 <form role="form">
                     <div class="form-group">
-                      <textarea class="form-control" placeholder="write a comment" rows="2"></textarea>
+                      <textarea class="form-control" placeholder="write a comment" rows="2" ng-model="currentComment"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <button class="btn btn-block btn-success" ng-click="postComment(currentComment)">Post</button>
                     </div>
                   </form>
                 <div ng-repeat="comments in currentBlogComments" ng-show="currentBlogComments.length !== 0">
