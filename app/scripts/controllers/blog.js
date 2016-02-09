@@ -43,4 +43,7 @@ angular.module('cookingBlog')
         });
     };
 
+    $scope.postComment = function (comment_params) {
+    }
+
   }]);
