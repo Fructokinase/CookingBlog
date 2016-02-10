@@ -13,12 +13,16 @@ angular.module('cookingBlog')
 
     var time = {};
 
+    var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "October", "November", "December"
+    ];
+
     time.unixToYYYYMMDD = function (unixTime) {
         return moment(unixTime, "X").format("YYYY-MM-DD");
     };
 
-    time.unixToYYYYMMDDHHMM = function (unixTime) {
-        return moment(unixTime, "X").format("YYYY-MM-DD HH:mm")
+    time.unixToMMDD = function (unixTime) {
+        return moment(unixTime, "X").format("MMM DD")
     }
 
     return time;

@@ -13,6 +13,7 @@ angular.module('cookingBlog')
 
     $scope.blogContents = [];
     $scope.commentsOpen = false;
+    $scope.comment_params = {};
 
     var bloglist_params = {
         limit: 100,
@@ -40,19 +41,21 @@ angular.module('cookingBlog')
             .then(function(data){
                 $scope.currentBlogComments = data.result;
                 $scope.currentBlogComments.map(function (blogComment) {
-                    blogComment.posted_on = time.unixToYYYYMMDDHHMM(blogComment.posted_on);
+                    blogComment.posted_on = time.unixToMMDD(blogComment.posted_on);
                 })
                 $scope.blogContents[index].fetchedComments = true;
             });
         }
     };
 
-    $scope.postComment = function (comment_params) {
-        comment_params.commenter_name = "placeholder";
+    $scope.postComment = function (blog_id, comment_params) {
+        comment_params.blog_id = blog_id;
         http_comments.postComment(comment_params)
         .then(function(data){
             if (data.status == 200) {
                 $scope.commentPostSuccess = true;
+                $scope.currentBlogComments.push(comment_params);
+                $scope.comment_params = {};
             };
         });
     };
