@@ -29,8 +29,29 @@ $blog-body-color: #669999;
         line-height: 20px;
     }
 
-    .comment-box{
-        min-height: 50px;
+    .comment-commenter-name{
+        color: green;
+        font-family: 'sans-serif';
+        font-weight: 400;
+        font-size: 25;
+    }
+
+    .comment-posted-on{
+        font-family: 'Poiret One';
+    }
+
+    .comment-comment{
+        font-family: 'open sans';
+        font-size: 11pt;
+        color: $blog-body-color;
+        line-height: 20px;
+    }
+
+    .no-comment-message{
+        font-family: 'open sans';
+        font-size: 13pt;
+        color: $blog-body-color;
+        line-height: 20px;
     }
 }
 

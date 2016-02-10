@@ -14,24 +14,41 @@
             </div>
 
             <uib-accordion>
-              <uib-accordion-group heading="comments" is-open="commentsOpen" ng-click="changeCommentStatus($index, blogContent.blog_id)">
+              <uib-accordion-group heading="comments" is-open="commentsOpen" ng-click="changeCommentStatus($index, blogContent.id)">
 
                 <div ng-show="currentBlogComments.length == 0">
-                    <p class="comment-box">no comments to show</p>
+                    <p class="jumbotron no-comment-message">no comments to show</p>
                 </div>
-                
-                <form role="form">
-                    <div class="form-group">
-                      <textarea class="form-control" placeholder="write a comment" rows="2" ng-model="currentComment"></textarea>
+
+                 <div ng-repeat="comments in currentBlogComments | orderBy: 'posted_on'" class="well">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="comment-commenter-name">{{comments.commenter_name}}</div>
+                      <div class="comment-posted-on">{{comments.posted_on}}</div>
                     </div>
-                    <div class="form-group">
-                      <button class="btn btn-block btn-success" ng-click="postComment({blog_id: blogContent.id, comment: currentComment})">Post</button>
+                    
+                    <div class="col-md-8">
+                      <div class="comment-comment">
+                        {{comments.comment}}
+                      </div>
                     </div>
-                  </form>
-                <div ng-repeat="comments in currentBlogComments" ng-show="currentBlogComments.length !== 0">
-                  <div>
                   </div>
                 </div>
+                
+                <form role="form" novalidate name="commentform">
+                    <div class="form-group" ng-class="{'has-error': commentform.commentername.$invalid}">
+                      <label>post as</label>
+                      <input type="text" class="form-control" name="commentername" ng-model="comment_params.commenter_name" required>
+                    </div>
+                     <div class="form-group" ng-class="{'has-error': commentform.comment.$invalid}">
+                      <textarea class="form-control" placeholder="write a comment" name="comment" rows="2" ng-model="comment_params.comment" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <button class="btn btn-block btn-success" ng-click="postComment(blogContent.id, comment_params)" ng-disabled="commentform.$invalid" >post</button>
+                    </div>
+                </form>
+
               </uib-accordion-group>
             </uib-accordion>
           </div>
@@ -42,7 +59,7 @@
   <div class="row row-eq-height about-content">
     <div class="col-md-4 profile-pic-col">
       <img class="profile-pic" src="https://s3-us-west-2.amazonaws.com/trailandcook-images/profile.jpg">
-    </div
+    </div>
     <div class="col-md-8 about-text">
           <h4>About me</h4>
           <p> For now this is just a place where I will blab about random cooking things I counter day to day and a place where I will explore the philosophy of cooking, in the hopes of discovering new recipes and techniques</p>
