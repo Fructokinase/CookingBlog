@@ -13,6 +13,14 @@ angular.module('cookingBlog')
 
     var http_comments = {};
 
+    http_comments.urlEncodedHeader = {'Content-Type': 'application/x-www-form-urlencoded'};
+    http_comments.transformFunction = function(obj) {
+        var str = [];
+        for(var p in obj)
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+        return str.join("&")
+    }; 
+
     http_comments.getComments = function (comment_params) {
         return $http({
             method: "GET",
@@ -24,8 +32,6 @@ angular.module('cookingBlog')
             }
         })
         .then(function (result) {
-            console.log("result")
-            console.log(result)
             return result.data;
         })
     };
@@ -34,7 +40,9 @@ angular.module('cookingBlog')
         return $http({
             method: "POST",
             url: $rootScope.baseUrl + "postComment",
-            params: {
+            headers: http_comments.urlEncodedHeader,
+            transformRequest: http_comments.transformFunction,
+            data: {
                 blog_id: comment_params.blog_id,
                 commenter_name: comment_params.commenter_name,
                 comment: comment_params.comment,
@@ -46,6 +54,8 @@ angular.module('cookingBlog')
         return $http({
             method: "PUT",
             url: $rootScope.baseUrl +  "likeComment",
+            headers: http_comments.urlEncodedHeader,
+            transformRequest: http_comments.transformFunction,
             params: {
                 id: comment_params.id
             }
