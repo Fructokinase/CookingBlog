@@ -52,14 +52,14 @@ angular.module('cookingBlog')
 
     http_comments.likeComment = function (comment_params) {
         return $http({
-            method: "PUT",
-            url: $rootScope.baseUrl +  "likeComment",
+            method: "POST",
+            url: $rootScope.baseUrl + "likeComment",
             headers: http_comments.urlEncodedHeader,
             transformRequest: http_comments.transformFunction,
-            params: {
+            data: {
                 id: comment_params.id
             }
-        })
+        });
     };
 
     return http_comments;
