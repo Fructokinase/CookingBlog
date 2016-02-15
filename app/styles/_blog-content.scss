@@ -7,6 +7,12 @@ $blog-body-color: #669999;
 // }
 
 .blog-content{
+
+    @media all and (max-width: 500px) {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
     margin-left: 25%;
     margin-right: 25%;
     padding-bottom: $interblog-space;
@@ -52,6 +58,36 @@ $blog-body-color: #669999;
         font-size: 13pt;
         color: $blog-body-color;
         line-height: 20px;
+    }
+
+    .fa-heart-o:hover {
+        color:#ff6600;
+        font-size: 1.75em;
+    }
+
+    .comment-like-icon {
+        display: flex;
+        flex-direction: column;
+        min-height: 50px;
+
+        .comment-likes{
+        }
+    }
+
+    .comment-like-icon img:hover {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform:translateZ(0) scale(1.20); /* Safari and Chrome */
+        -moz-transform:scale(1.20); /* Firefox */
+        -ms-transform:scale(1.20); /* IE 9 */
+        -o-transform:translatZ(0) scale(1.20); /* Opera */
+        transform:translatZ(0) scale(1.20);
+    }
+
+    .grayscale {
+      -webkit-filter: brightness(1.10) grayscale(100%) contrast(90%);
+      -moz-filter: brightness(1.10) grayscale(100%) contrast(90%);
+      filter: brightness(1.10) grayscale(100%); 
     }
 }
 

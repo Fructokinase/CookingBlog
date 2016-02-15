@@ -2,6 +2,10 @@
   margin-left: 25%;
   margin-right: 25%;
   padding-bottom: 40px; }
+  @media all and (max-width: 500px) {
+    .blog-content {
+      margin-left: 5%;
+      margin-right: 5%; } }
   .blog-content .blog-title {
     text-align: center;
     font-family: Handlee;
@@ -31,6 +35,29 @@
     font-size: 13pt;
     color: #669999;
     line-height: 20px; }
+  .blog-content .fa-heart-o:hover {
+    color: #ff6600;
+    font-size: 1.75em; }
+  .blog-content .comment-like-icon {
+    display: flex;
+    flex-direction: column;
+    min-height: 50px; }
+  .blog-content .comment-like-icon img:hover {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.2);
+    /* Safari and Chrome */
+    -moz-transform: scale(1.2);
+    /* Firefox */
+    -ms-transform: scale(1.2);
+    /* IE 9 */
+    -o-transform: translatZ(0) scale(1.2);
+    /* Opera */
+    transform: translatZ(0) scale(1.2); }
+  .blog-content .grayscale {
+    -webkit-filter: brightness(1.1) grayscale(100%) contrast(90%);
+    -moz-filter: brightness(1.1) grayscale(100%) contrast(90%);
+    filter: brightness(1.1) grayscale(100%); }
 
 .blog-contents {
   background-color: white;
@@ -51,21 +78,29 @@
     font-size: 13pt;
     color: #f5f5f0; }
   .blog-about .about-content {
-    position: relative;
-    top: 10%; }
+    display: flex;
+    align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around; }
+    @media all and (max-width: 500px) {
+      .blog-about .about-content .profile-pic-col {
+        padding-top: 10%;
+        padding-bottom: 10%; } }
   .blog-about .about-text {
     position: relative;
     float: right; }
-  .blog-about .profile-pic-col {
-    height: 100%;
-    position: absolute; }
   .blog-about .profile-pic {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0px;
-    right: 20%; }
+    border-radius: 50%; }
+  .blog-about .social {
+    position: relative;
+    bottom: 0;
+    background-color: red; }
 
 .blog-admin {
   margin-left: 10%;
@@ -122,7 +157,8 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
 .blog-wrapper {
   height: 100%;
-  position: relative; }
+  position: relative;
+  width: 100%; }
   .blog-wrapper .blog-header .navbar-fixed-top {
     margin-bottom: 0px; }
   .blog-wrapper .blog-header .navbar-default.atblog {

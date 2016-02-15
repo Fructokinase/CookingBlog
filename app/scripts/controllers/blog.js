@@ -8,8 +8,8 @@
  * Controller of the angularGeneratorYoApp
  */
 angular.module('cookingBlog')
-  .controller('BlogCtrl', ["$scope", "http_blog", "time", "$timeout", "http_comments",
-    function ($scope, http_blog, time, $timeout, http_comments) {
+  .controller('BlogCtrl', ["$scope", "http_blog", "time", "$timeout", "http_comments", "$rootScope",
+    function ($scope, http_blog, time, $timeout, http_comments, $rootScope) {
 
     $scope.blogContents = [];
     $scope.commentsOpen = false;
@@ -59,5 +59,26 @@ angular.module('cookingBlog')
             };
         });
     };
+
+    $scope.likeComment = function(index, comment_id) {
+        http_comments.likeComment({ id: comment_id})
+        .then(function (data) {
+            if (data.status == 200) {
+                $scope.like_success = true;
+                $scope.currentBlogComments[index].likes+=1;
+
+            } else {
+                console.log("like couldn't be processed")
+            }
+        });
+    };
+
+    $scope.fb_feed = function (){
+        $rootScope.fb_feed();
+    };
+
+    $scope.enlarge = function(){
+        console.log("should nelarge")
+    }
 
   }]);
