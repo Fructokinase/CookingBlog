@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.css' />
+    <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.css' />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -55,6 +56,10 @@
 
       <div class="blog-top"> 
         <img class="featured-blog-picture" windowsize ng-style="{'height':w_height}" src="https://s3-us-west-2.amazonaws.com/trailandcook-images/2016-02-01-01.jpg">
+        <!-- <video autoplay loop poster="polina.jpg" id="bgvid">
+          <source src="polina.webm" type="video/webm">
+          <source src=" https://s3-us-west-2.amazonaws.com/trailandcook-images/kitchen.mp4" type="video/mp4">
+        </video> -->
       </div>
 
       <div class="blog-main" windowsize ng-style="{'padding-top':w_height}" ui-view >
@@ -97,6 +102,7 @@
     <script src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
     <script src="bower_components/wow/dist/wow.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <!-- endbower -->
 
     

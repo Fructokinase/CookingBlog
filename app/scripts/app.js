@@ -18,7 +18,8 @@ var app = angular
     'ngTouch',
     'ui.router',
     'ui.tinymce',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angular-loading-bar'
   ])
   .config(['$stateProvider', '$urlRouterProvider', "$httpProvider",
     function ($stateProvider, $urlRouterProvider, $httpProvider) {
