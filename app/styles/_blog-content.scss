@@ -2,6 +2,7 @@
 $interblog-space: 40px;
 $title-font-size: 32px;
 $blog-body-color: #669999;
+
 // .blog-content{
 //     height: $blog-content-height;
 // }
@@ -33,6 +34,18 @@ $blog-body-color: #669999;
         font-size: 13pt;
         color: $blog-body-color;
         line-height: 20px;
+
+        img{
+            -webkit-transition: all 0.7s ease;
+            transition: all 0.7s ease;
+        }
+
+        img:hover {
+            opacity:0.8;
+            filter: alpha(opacity=80);
+        }
+
+
     }
 
     .comment-commenter-name{

@@ -36,6 +36,27 @@ angular.module('cookingBlog')
         })
     };
 
+    http_admin.getBlogList = function(){
+        return $http({
+            method: "GET",
+            url: $rootScope.baseUrl + "getBlogQuickList"
+        }).then(function (result){
+            return result.data
+        })
+    }
+
+    http_admin.getBlogDetail = function(blog_params){
+        return $http({
+            method: "GET",
+            url: $rootScope.baseUrl + "getBlogDetail",
+            params: {
+                id: blog_params.id
+            }
+        }).then(function (result){
+            return result.data;
+        })
+    };
+
     return http_admin;
 
   }]);

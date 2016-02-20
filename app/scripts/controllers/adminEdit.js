@@ -8,8 +8,8 @@
  * Controller of the angularGeneratorYoApp
  */
 angular.module('cookingBlog')
-  .controller('AdminCtrl', ["$scope", "http_admin", "$sce", "$state", 
-    function ($scope, http_admin, $sce, $state) {
+  .controller('AdminEditCtrl', ["$scope", "http_admin", "$sce", 
+    function ($scope, http_admin, $sce) {
 
     tinymce.init({ 
         selector:'textarea',
@@ -20,7 +20,18 @@ angular.module('cookingBlog')
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
     });
 
+    http_admin.getBlogList().then(function (data){
+      $scope.blogList = data.result
+    });
+
     $scope.blog_params = {};
+
+    $scope.getBlogDetail = function(blog) {
+      http_admin.getBlogDetail(blog).then(function(data){
+        $scope.blog_params = data.result[0]
+        tinyMCE.activeEditor.setContent($scope.blog_params.body);
+      })
+    }
 
     $scope.post = function(blog_params){
        tinyMCE.triggerSave();
@@ -32,10 +43,6 @@ angular.module('cookingBlog')
         };
        });
     };
-
-    $scope.changeAdminView = function(state){
-      $state.go(state);
-    }
 
 
   }]);

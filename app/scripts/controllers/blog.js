@@ -8,12 +8,16 @@
  * Controller of the angularGeneratorYoApp
  */
 angular.module('cookingBlog')
-  .controller('BlogCtrl', ["$scope", "http_blog", "time", "$timeout", "http_comments", "$rootScope",
-    function ($scope, http_blog, time, $timeout, http_comments, $rootScope) {
+  .controller('BlogCtrl', ["$scope", "http_blog", "time", "$timeout", "http_comments", "$rootScope", "$stateParams",
+    function ($scope, http_blog, time, $timeout, http_comments, $rootScope, $stateParams) {
 
     $scope.blogContents = [];
     $scope.commentsOpen = false;
-    $scope.comment_params = {};
+    $scope.bloglist_params = {
+        currentBlogMonth: $stateParams.blogmonth
+    };
+
+    console.log($scope.bloglist_params)
 
     var bloglist_params = {
         limit: 100,

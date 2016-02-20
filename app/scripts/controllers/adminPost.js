@@ -8,8 +8,8 @@
  * Controller of the angularGeneratorYoApp
  */
 angular.module('cookingBlog')
-  .controller('AdminCtrl', ["$scope", "http_admin", "$sce", "$state", 
-    function ($scope, http_admin, $sce, $state) {
+  .controller('AdminPostCtrl', ["$scope", "http_admin", "$sce", 
+    function ($scope, http_admin, $sce) {
 
     tinymce.init({ 
         selector:'textarea',
@@ -32,10 +32,6 @@ angular.module('cookingBlog')
         };
        });
     };
-
-    $scope.changeAdminView = function(state){
-      $state.go(state);
-    }
 
 
   }]);
