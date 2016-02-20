@@ -5,9 +5,13 @@
   padding: 0.2em 0;
 }
 
-html, body {
+html{
   padding: 0;
   position: relative;
+  height: 100%;
+}
+
+body{
   height: 100%;
 }
 

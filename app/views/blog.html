@@ -1,93 +1,77 @@
-<div class = "blog-contents" ng-controller="BlogCtrl" scrollnav  ng-class="{'scrollednavbar':boolChangeClass}">
-    <div ng-repeat="blogContent in blogContents | orderBy: '-unixDate'">
-        <div class="blog-content container">
-            <div class="blog-title">
-                {{blogContent.title}}
-            </div>
+ <div class="blog-main" >
 
-            <div class="blog-date">
-                {{blogContent.created_on}}
-            </div>
+          <!--  <div class="blog-footer">
+            <p><span class="glyphicon glyphicon-glass"></span> Alex Chen 2015</p>
+          </div> -->
+  <div class = "blog-contents" ng-controller="BlogCtrl" scrollnav  ng-class="{'scrollednavbar':boolChangeClass}">
+      <div ng-repeat="blogContent in blogContents | orderBy: '-unixDate'">
+          <div class="blog-content container">
+              <div class="blog-title">
+                  {{blogContent.title}}
+              </div>
 
-            <div class="blog-body" ng-bind-html="blogContent.body">
-                {{blogContent.body}}
-            </div>
+              <div class="blog-date">
+                  {{blogContent.created_on}}
+              </div>
 
-            <uib-accordion>
-              <uib-accordion-group is-open="commentsOpen" ng-click="changeCommentStatus($index, blogContent.id)">
+              <div class="blog-body" ng-bind-html="blogContent.body">
+                  {{blogContent.body}}
+              </div>
 
-              <uib-accordion-heading>
-                Comments  <i class="fa fa-comments-o"></i>
-              </uib-accordion-heading>
+              <uib-accordion>
+                <uib-accordion-group is-open="commentsOpen" ng-click="changeCommentStatus($index, blogContent.id)">
 
-                <div ng-show="currentBlogComments.length == 0">
-                    <p class="jumbotron no-comment-message">no comments to show</p>
-                </div>
+                <uib-accordion-heading>
+                  Comments  <i class="fa fa-comments-o"></i>
+                </uib-accordion-heading>
 
-                 <div ng-repeat="comments in currentBlogComments | orderBy: 'posted_on'" class="well">
-                  <div class="row">
-                    <div class="col-md-3">
-                      <div class="comment-commenter-name">{{comments.commenter_name}}</div>
-                      <div class="comment-posted-on">{{comments.posted_on}}</div>
-                    </div>
-                    
-                    <div class="col-md-8">
-                      <div class="comment-comment">
-                        {{comments.comment}}
-                      </div>
-                    </div>
-
-                    <div class="col-md-1">
-                      <div class="comment-like comment-like-icon">
-                        <i class="fa fa-heart-o" ng-click="likeComment($index, comments.id)" ng-mouseover="enlarge()"></i>
-                        <div class="comment-likes">{{comments.likes}}</div>
-                        <!-- <img class="img-responsive img-rounded" style="width:40px;height:40px;" src="http://placehold.it/70"> -->
-                      </div>
-                    </div>
-
+                  <div ng-show="currentBlogComments.length == 0">
+                      <p class="jumbotron no-comment-message">no comments to show</p>
                   </div>
-                </div>
-                
-                <form role="form" novalidate name="commentform">
-                    <div class="form-group" ng-class="{'has-error': commentform.commentername.$invalid}">
-                      <label>post as</label>
-                      <input type="text" class="form-control" name="commentername" ng-model="comment_params.commenter_name" required>
-                    </div>
-                     <div class="form-group" ng-class="{'has-error': commentform.comment.$invalid}">
-                      <textarea class="form-control" placeholder="write a comment" name="comment" rows="2" ng-model="comment_params.comment" required></textarea>
-                    </div>
 
-                    <div class="form-group">
-                      <button class="btn btn-block btn-success" ng-click="postComment(blogContent.id, comment_params)" ng-disabled="commentform.$invalid" >post</button>
+                   <div ng-repeat="comments in currentBlogComments | orderBy: 'posted_on'" class="well">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="comment-commenter-name">{{comments.commenter_name}}</div>
+                        <div class="comment-posted-on">{{comments.posted_on}}</div>
+                      </div>
+                      
+                      <div class="col-md-8">
+                        <div class="comment-comment">
+                          {{comments.comment}}
+                        </div>
+                      </div>
+
+                      <div class="col-md-1">
+                        <div class="comment-like comment-like-icon">
+                          <i class="fa fa-heart-o" ng-click="likeComment($index, comments.id)" ng-mouseover="enlarge()"></i>
+                          <div class="comment-likes">{{comments.likes}}</div>
+                          <!-- <img class="img-responsive img-rounded" style="width:40px;height:40px;" src="http://placehold.it/70"> -->
+                        </div>
+                      </div>
+
                     </div>
-                </form>
+                  </div>
+                  
+                  <form role="form" novalidate name="commentform">
+                      <div class="form-group" ng-class="{'has-error': commentform.commentername.$invalid}">
+                        <label>post as</label>
+                        <input type="text" class="form-control" name="commentername" ng-model="comment_params.commenter_name" required>
+                      </div>
+                       <div class="form-group" ng-class="{'has-error': commentform.comment.$invalid}">
+                        <textarea class="form-control" placeholder="write a comment" name="comment" rows="2" ng-model="comment_params.comment" required></textarea>
+                      </div>
 
-              </uib-accordion-group>
-            </uib-accordion>
-          </div>
-    </div>
-</div>
+                      <div class="form-group">
+                        <button class="btn btn-block btn-success" ng-click="postComment(blogContent.id, comment_params)" ng-disabled="commentform.$invalid" >post</button>
+                      </div>
+                  </form>
 
-<div class="blog-about" windowsize>
-  <div class="container">
-    <div class="row about-content">
-      <div class="col-md-4 profile-pic-col">
-        <img class="profile-pic" src="https://s3-us-west-2.amazonaws.com/trailandcook-images/profile.jpg">
+                </uib-accordion-group>
+              </uib-accordion>
+            </div>
       </div>
-      <div class="col-md-8 about-text">
-            <h4>About me</h4>
-            <p> For now this is just a place where I will blab about random cooking things I counter day to day and a place where I will explore the philosophy of cooking, in the hopes of discovering new recipes and techniques</p>
-            <p>I go to UWaterloo so if you see me on campus or something, say hi!</p>
-            <p> Alex </p>
-            <p>By the way, two recipe books on average are published in France each day. </p>
-      </div>
-    </div>
   </div>
 
-<!--   <div class="row social">
-    <div class="col-md-12">
-      <div class="fb-share-button" data-href="http://trailandcook.com" data-layout="button"></div> 
-      <button class="fb-share-button" ng-click="fb_feed()" data-layout="button">share</button>
-    </div>
-  </div> -->
+
 </div>

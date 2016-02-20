@@ -26,18 +26,31 @@ var app = angular
      delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
     $stateProvider
+    .state('home',{
+      url: '/home',
+      templateUrl: "views/home.html",
+      controller: "HomeCtrl"
+    })
     .state('blog', {
-      url: '/',
+      url: '/blog/:blogmonth',
       templateUrl: "views/blog.html",
       controller: "BlogCtrl"
     })
     .state('admin', {
       url: '/admin',
       templateUrl: "views/adminHome.html",
-      controller: "AdminCtrl as admin",
+      controller: "AdminCtrl as admin"
+    })
+    .state('admin.post',{
+      templateUrl: 'views/adminBlogPost.html',
+      controller: 'AdminPostCtrl as adminpost'
+    })
+    .state('admin.edit', {
+      templateUrl: "views/adminBlogEdit.html",
+      controller: 'AdminEditCtrl as adminedit'
     })
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
 
   }]);
 
