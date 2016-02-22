@@ -24,6 +24,10 @@
     .blog-content .blog-body img:hover {
       opacity: 0.8;
       filter: alpha(opacity=80); }
+  .blog-content .blog-tags {
+    margin: 5px; }
+    .blog-content .blog-tags .blog-tag {
+      display: inline; }
   .blog-content .comment-commenter-name {
     color: green;
     font-family: 'sans-serif';
@@ -85,7 +89,8 @@
 .blog-about .about-me {
   font-family: "Qwigley";
   font-size: 30pt;
-  text-align: center; }
+  text-align: center;
+  color: #595959; }
 .blog-about p {
   font-family: 'Open Sans';
   font-size: 13pt;
@@ -105,6 +110,38 @@
 .blog-top .featured-blog-picture {
   position: fixed;
   width: 100%; }
+
+.blog-main .blog-home {
+  min-height: 100%; }
+  .blog-main .blog-home .blog-home-title {
+    height: 100px;
+    display: flex;
+    justify-content: center; }
+    .blog-main .blog-home .blog-home-title h4 {
+      margin: auto;
+      font-family: 'Qwigley', cursive;
+      font-size: 50px; }
+  .blog-main .blog-home .blog-image-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 10%;
+    padding-right: 10%; }
+    .blog-main .blog-home .blog-image-container .blog-home-pic-box {
+      width: 250px;
+      height: 200px;
+      border: 1px #f2f2f2 solid;
+      margin: 10px; }
+      .blog-main .blog-home .blog-image-container .blog-home-pic-box .blog-home-pic {
+        height: 145px;
+        width: 230px;
+        margin: 10px; }
+    .blog-main .blog-home .blog-image-container .blog-home-image-hover {
+      display: flex;
+      justify-content: center;
+      height: 100%; }
+      .blog-main .blog-home .blog-image-container .blog-home-image-hover .blog-title {
+        color: white; }
 
 /* latin-ext */
 @font-face {
@@ -156,7 +193,9 @@
     background-color: #f2f2f2;
     min-height: 100%;
     position: fixed;
-    width: 25%; }
+    width: 25%;
+    /*SEARCH FORM*/
+    /*to cange only one form and not all give unique class name like  class="search-form" */ }
     .blog-wrapper .blog-header .blog-nav-title-container {
       width: 100%;
       display: flex;
@@ -164,7 +203,9 @@
       .blog-wrapper .blog-header .blog-nav-title-container .blog-nav-title {
         margin: auto;
         font-family: 'Qwigley', cursive;
-        font-size: 50px; }
+        font-size: 50px;
+        text-decoration: none;
+        color: #1a1a1a; }
     .blog-wrapper .blog-header .nav {
       padding-top: 10px; }
       .blog-wrapper .blog-header .nav li a {
@@ -175,9 +216,35 @@
         -webkit-transition: all 0.7s ease;
         transition: all 0.7s ease; }
     .blog-wrapper .blog-header .nav li a:hover {
-      text-decoration: none; }
+      color: black; }
+    .blog-wrapper .blog-header .nav li a:before {
+      content: "";
+      position: absolute;
+      width: 20%;
+      height: 2px;
+      bottom: 0;
+      left: 40%;
+      background-color: black;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.2s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s; }
+    .blog-wrapper .blog-header .nav li a:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1); }
+    .blog-wrapper .blog-header .blog-search {
+      padding-left: 20%;
+      padding-top: 20px; }
+    .blog-wrapper .blog-header .search-form {
+      border-radius: 30px 0px 0px 30px;
+      /*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/ }
+    .blog-wrapper .blog-header .search-btn {
+      border-radius: 0px 30px 30px 0px;
+      cursor: pointer; }
   .blog-wrapper .blog-main {
-    padding-left: 25%;
+    margin-left: 25%;
     min-height: 100%;
     width: 75%; }
 

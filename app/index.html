@@ -30,22 +30,30 @@
     <!-- Add your site or application content here -->
     <div class="blog-wrapper">
 
-      <div class="blog-header fadeIn wow" data-wow-delay="0.5s" windowsize ng-style="{'min-width':'300px'}">
+      <div class="blog-header fadeInLeft wow" data-wow-delay="0.5s" windowsize ng-style="{'min-width':'300px'}">
 
           <div class="blog-nav-title-container">
-            <a class="blog-nav-title" href="#/">Trail and Cook</a>
+            <a class="blog-nav-title fadeInLeft wow" data-wow-delay="0.6s" href="#/">Trail and Cook</a>
           </div>
 
            <div class="blog-about">
-              <p class="about-me">About</p>
-              <img class="profile-pic" src="https://s3-us-west-2.amazonaws.com/trailandcook-images/profile.jpg">
-              <div class="about-text">
+              <p class="about-me fadeInLeft wow" data-wow-delay="0.7s">About</p>
+              <img class="profile-pic fadeInLeft wow" data-wow-delay="0.8s" src="https://s3-us-west-2.amazonaws.com/trailandcook-images/profile.jpg">
+              <div class="about-text fadeInLeft wow" data-wow-delay="0.9s">
                 <p>Welcome to Alex's cooking blog ~</p>
               </div>
             </div>
 
+             <form id="search-form" class="form-inline fadeInLeft wow"  data-wow-delay="1.0s" role="form" method="post" action="//www.google.com/search" target="_blank">
+                <div class="input-group blog-search">
+                <input type="text" class="form-control search-form" placeholder="Search">
+                <span class="input-group-btn"><button type="submit" class="btn btn-primary search-btn" data-target="#search-form" name="q"><i class="fa fa-search"></i>
+                </button></span>
+                </div>
+             </form>
 
-              <ul class="nav navbar-stacked" id="main-menu">
+
+              <ul class="nav navbar-stacked fadeInLeft wow" data-wow-delay="1.1s" id="main-menu">
                 <li><a ui-sref="home">Home</a></li>
                 <li><a href="#dates" data-toggle="collapse"  data-parent="#main-menu">Blog</a> </li>
                 <div class="collapse" id="dates" >
@@ -56,20 +64,10 @@
                 </div>
               </ul>
 
-             
-
       </div>
 
-      <div ui-view>
+      <div ui-view class="blog-main">
       </div>
-
-    <!--    <div class="blog-top"> 
-        <img class="featured-blog-picture" windowsize ng-style="{'height':w_height}" src="https://s3-us-west-2.amazonaws.com/trailandcook-images/2016-02-01-01.jpg">
-        <video autoplay loop poster="polina.jpg" id="bgvid">
-          <source src="polina.webm" type="video/webm">
-          <source src=" https://s3-us-west-2.amazonaws.com/trailandcook-images/kitchen.mp4" type="video/mp4">
-        </video>
-      </div> -->
 
     </div>
 
@@ -87,7 +85,7 @@
 
     <!-- SCM Music Player http://scmplayer.net -->
 <script type="text/javascript" src="http://scmplayer.net/script.js" 
-data-config="{'skin':'skins/tunes/skin.css','volume':50,'autoplay':true,'shuffle':true,'repeat':1,'placement':'top','showplaylist':false,'playlist':[{'title':'Rather Be - Clean Bandit feat Jess Glynne','url':'https://s3-us-west-2.amazonaws.com/trailandcook-audio/11+-+Rather+Be+(feat.+Jess+Glynne)+-+Clean+Bandit.mp3'},{'title':'The Notorious BIG ft. Ja Rule - Old Thing Back (Matoma Remix)','url':'https://s3-us-west-2.amazonaws.com/trailandcook-audio/The_Notorious_BIG_feat._Ja_Rule_-_Old_Thing_Back_Matoma_Remix_(mp3.pm).mp3'}]}" ></script>
+data-config="{'skin':'skins/tunes/skin.css','volume':0,'autoplay':true,'shuffle':true,'repeat':1,'placement':'top','showplaylist':false,'playlist':[{'title':'Rather Be - Clean Bandit feat Jess Glynne','url':'https://s3-us-west-2.amazonaws.com/trailandcook-audio/11+-+Rather+Be+(feat.+Jess+Glynne)+-+Clean+Bandit.mp3'},{'title':'The Notorious BIG ft. Ja Rule - Old Thing Back (Matoma Remix)','url':'https://s3-us-west-2.amazonaws.com/trailandcook-audio/The_Notorious_BIG_feat._Ja_Rule_-_Old_Thing_Back_Matoma_Remix_(mp3.pm).mp3'}]}" ></script>
 <!-- SCM Music Player script end -->
 
 
@@ -129,6 +127,8 @@ data-config="{'skin':'skins/tunes/skin.css','volume':50,'autoplay':true,'shuffle
         <script src="scripts/directives/scrollnav.js"></script>
         <script src="scripts/directives/windowsize.js"></script>
         <script src="scripts/services/http_comments.js"></script>
+        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/services/http_image.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -1,9 +1,4 @@
- <div class="blog-main" >
-
-          <!--  <div class="blog-footer">
-            <p><span class="glyphicon glyphicon-glass"></span> Alex Chen 2015</p>
-          </div> -->
-  <div class = "blog-contents" ng-controller="BlogCtrl" scrollnav  ng-class="{'scrollednavbar':boolChangeClass}">
+<div class = "blog-contents" ng-controller="BlogCtrl" scrollnav  ng-class="{'scrollednavbar':boolChangeClass}">
       <div ng-repeat="blogContent in blogContents | orderBy: '-unixDate'">
           <div class="blog-content container">
               <div class="blog-title">
@@ -16,6 +11,11 @@
 
               <div class="blog-body" ng-bind-html="blogContent.body">
                   {{blogContent.body}}
+              </div>
+
+              <div class="blog-tags">
+                <i class="fa fa-tags"></i>
+                <p ng-repeat="tag in blogContent.tags" class="blog-tag">  {{tag}}  </p>
               </div>
 
               <uib-accordion>
@@ -73,5 +73,3 @@
       </div>
   </div>
 
-
-</div>

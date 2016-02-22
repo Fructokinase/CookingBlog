@@ -13,15 +13,11 @@ angular.module('cookingBlog')
 
     $scope.blogContents = [];
     $scope.commentsOpen = false;
-    $scope.bloglist_params = {
-        currentBlogMonth: $stateParams.blogmonth
-    };
-
-    console.log($scope.bloglist_params)
 
     var bloglist_params = {
         limit: 100,
-        offset: 0
+        offset: 0,
+        created_on: moment($stateParams.blogmonth,"YYYY-MM").format("X")
     };
 
     http_blog.getBlogList(bloglist_params).then(function (data) {
@@ -32,6 +28,7 @@ angular.module('cookingBlog')
             blogContent.commentsOpen = false;
             blogContent.fetchedComments = false;
         });
+        console.log($scope.blogContents)
     });
 
     $scope.changeCommentStatus = function (index, blog_id) {

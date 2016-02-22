@@ -48,6 +48,15 @@ $blog-body-color: #669999;
 
     }
 
+    .blog-tags{
+        margin: 5px;
+        .blog-tag{
+        display: inline;
+        }
+    }
+
+    
+
     .comment-commenter-name{
         color: green;
         font-family: 'sans-serif';

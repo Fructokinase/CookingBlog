@@ -55,7 +55,8 @@ var app = angular
   }]);
 
   app.run(["$rootScope", "$window", function($rootScope, $window){
-    $rootScope.baseUrl = "http://trailandcook.mybluemix.net/";
+    $rootScope.baseUrl = "http://trailandcook.herokuapp.com/"
+    // $rootScope.baseUrl = "http://trailandcook.mybluemix.net/";
     // $rootScope.baseUrl = "http://localhost:3000/";
     new WOW().init();
 

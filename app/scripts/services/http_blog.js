@@ -18,7 +18,7 @@ angular.module('cookingBlog')
             method: "GET",
             url: $rootScope.baseUrl + "getBlogList",
             params: {
-                key: "",
+                created_on: blogListParams.created_on,
                 limit: blogListParams.limit,
                 offset: blogListParams.offset,
                 show_on_blog: true
