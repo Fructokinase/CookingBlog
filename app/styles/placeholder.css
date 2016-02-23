@@ -1,7 +1,6 @@
 .blog-content {
-  margin-left: 25%;
-  margin-right: 25%;
-  padding-bottom: 40px; }
+  padding-bottom: 40px;
+  width: 100%; }
   @media all and (max-width: 500px) {
     .blog-content {
       margin-left: 5%;
@@ -72,7 +71,11 @@
 .blog-contents {
   background-color: white;
   padding-bottom: 10px;
-  padding-top: 10px; }
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .blog-about img {
   -webkit-transition: all 0.7s ease;
@@ -132,6 +135,8 @@
       height: 200px;
       border: 1px #f2f2f2 solid;
       margin: 10px; }
+      .blog-main .blog-home .blog-image-container .blog-home-pic-box .blog-title-button {
+        height: 30px; }
       .blog-main .blog-home .blog-image-container .blog-home-pic-box .blog-home-pic {
         height: 145px;
         width: 230px;

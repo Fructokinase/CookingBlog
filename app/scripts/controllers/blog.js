@@ -31,7 +31,13 @@ angular.module('cookingBlog')
         console.log($scope.blogContents)
     });
 
-    $scope.changeCommentStatus = function (index, blog_id) {
+    $scope.changeCommentStatus = function (index, blog_id, $event) {
+
+        if($event){
+          $event.stopPropagation();
+          $event.preventDefault();
+        }
+        
          $scope.blogContents[index].commentsOpen = !$scope.blogContents[index].commentsOpen;
          if ($scope.blogContents[index].fetchedComments == false) {
             http_comments.getComments({

@@ -1,6 +1,6 @@
 <div class = "blog-contents" ng-controller="BlogCtrl" scrollnav  ng-class="{'scrollednavbar':boolChangeClass}">
       <div ng-repeat="blogContent in blogContents | orderBy: '-unixDate'">
-          <div class="blog-content container">
+          <div class="blog-content container wow fadeIn" data-wow-delay="0.2s">
               <div class="blog-title">
                   {{blogContent.title}}
               </div>
@@ -19,7 +19,7 @@
               </div>
 
               <uib-accordion>
-                <uib-accordion-group is-open="commentsOpen" ng-click="changeCommentStatus($index, blogContent.id)">
+                <uib-accordion-group class="" is-open="commentsOpen" ng-click="changeCommentStatus($index, blogContent.id, $event)">
 
                 <uib-accordion-heading>
                   Comments  <i class="fa fa-comments-o"></i>
