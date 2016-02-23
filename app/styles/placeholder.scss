@@ -2,6 +2,7 @@
 @import "blog-about";
 @import "blog-admin";
 @import "blog-top";
+@import "blog-home";
 @import "web-fonts";
 
 
@@ -11,7 +12,11 @@ $content-margin: 10;
   height: 100%;
   position: relative;
   width: 100%;
-
+  // background-image: url(https://s3-us-west-2.amazonaws.com/trailandcook-images/2016-02-01-01.jpg);
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: 100% 100%;
+  
   .blog-header{
 
     background-color: #f2f2f2;
@@ -28,6 +33,8 @@ $content-margin: 10;
         margin: auto;
         font-family: 'Qwigley', cursive;
         font-size: 50px;
+        text-decoration: none;
+        color: #1a1a1a;
       }
 
     }
@@ -49,11 +56,46 @@ $content-margin: 10;
     .nav{
       li{
         a:hover{
-          text-decoration: none;
+            color: black;
+          }
+        a:before {
+          content: "";
+          position: absolute;
+          width: 20%;
+          height: 2px;
+          bottom: 0;
+          left: 40%;
+          background-color: black;
+          visibility: hidden;
+          -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+          -webkit-transition: all 0.2s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s;
+        }
+        a:hover:before {
+          visibility: visible;
+          -webkit-transform: scaleX(1);
+          transform: scaleX(1);
         }
       }
     }
 
+    .blog-search{
+      padding-left: 20%;
+      padding-top: 20px;
+    }
+
+    /*SEARCH FORM*/
+    .search-form {
+      border-radius: 30px 0px 0px 30px;
+      /*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/
+    }
+    
+    /*to cange only one form and not all give unique class name like  class="search-form" */
+    .search-btn {
+      border-radius: 0px 30px 30px 0px;
+      cursor:pointer;
+    }
     // .navbar-default{
     //   padding-top: 10px;
     //   // background-color: transparent;
@@ -111,7 +153,7 @@ $content-margin: 10;
   // }
 
   .blog-main{
-    padding-left: 25%;
+    margin-left: 25%;
     min-height: 100%;
     width: 75%;
   }

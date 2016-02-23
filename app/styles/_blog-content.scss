@@ -14,9 +14,8 @@ $blog-body-color: #669999;
         margin-right: 5%;
     }
 
-    margin-left: 25%;
-    margin-right: 25%;
     padding-bottom: $interblog-space;
+    width: 100%;
 
     .blog-title{
         text-align: center;
@@ -47,6 +46,15 @@ $blog-body-color: #669999;
 
 
     }
+
+    .blog-tags{
+        margin: 5px;
+        .blog-tag{
+        display: inline;
+        }
+    }
+
+    
 
     .comment-commenter-name{
         color: green;

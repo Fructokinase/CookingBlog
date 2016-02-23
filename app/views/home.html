@@ -1,0 +1,24 @@
+<div class="blog-home">
+       <!--  <video autoplay loop poster="polina.jpg" id="bgvid">
+          <source src="polina.webm" type="video/webm">
+          <source src=" https://s3-us-west-2.amazonaws.com/trailandcook-images/kitchen.mp4" type="video/mp4">
+        </video> -->
+
+        <div class="blog-home-title">
+            <h4>Gallery</h4>
+        </div>
+
+        <div class="blog-image-container">
+            <div ng-repeat="image in image_list">
+                <div class="blog-home-pic-box zoomIn wow" data-wow-delay='{{image.delay}}' ng-mouseover="hoveringImage = true" ng-mouseleave="hoveringImage = false" ng-class="">
+                    <img class="blog-home-pic" src={{image.s3_path}} ng-hide="hoveringImage">
+
+                    <!--  <div ng-show="hoveringImage" ng-hide="!hoveringImage" class="blog-home-image-hover">
+                        <button class="btn btn-success blog-title-button"><p class="blog-title">title</p></button>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+
+</div>
